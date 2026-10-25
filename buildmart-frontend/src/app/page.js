@@ -1,23 +1,113 @@
 
 const categories = [
-  { name: "Cement", icon: "▥", count: "Building essentials" },
-  { name: "Iron & Steel", icon: "⚒", count: "Strong foundations" },
-  { name: "Sand & Aggregate", icon: "◈", count: "Quality materials" },
-  { name: "Blocks & Bricks", icon: "▦", count: "Build with confidence" },
-  { name: "Electrical", icon: "ϟ", count: "Wires, bulbs & more" },
-  { name: "Plumbing", icon: "♧", count: "Pipes and fittings" },
-  { name: "Ceramics & Tiles", icon: "▧", count: "Beautiful finishes" },
-  { name: "Glass", icon: "▤", count: "Clear possibilities" },
-  { name: "Gypsum", icon: "▱", count: "Ceilings and walls" },
-  { name: "Paint & Finishes", icon: "◉", count: "Add your colors" },
-  { name: "Doors & Windows", icon: "▣", count: "Style and security" },
-  { name: "Roofing", icon: "⌂", count: "Protection for every home" },
-  { name: "Sanitary Ware", icon: "♧", count: "Sinks and toilets" },
-  { name: "Furniture", icon: "▤", count: "Complete your spaces" },
-  { name: "Quartz & Stone", icon: "◆", count: "Premium surfaces" },
-  { name: "Timber & Wood", icon: "▥", count: "Wood for every project" },
-  { name: "Tools & Safety", icon: "⚙", count: "Work safely" },
-  { name: "Soil & Landscaping", icon: "♣", count: "Prepare your site" },
+  {
+    name: "Cement",
+    slug: "cement",
+    icon: "▥",
+    count: "Building essentials",
+  },
+  {
+    name: "Iron & Steel",
+    slug: "iron-and-steel",
+    icon: "⚒",
+    count: "Strong foundations",
+  },
+  {
+    name: "Sand & Aggregate",
+    slug: "sand-and-aggregate",
+    icon: "◈",
+    count: "Quality materials",
+  },
+  {
+    name: "Blocks & Bricks",
+    slug: "blocks-and-bricks",
+    icon: "▦",
+    count: "Build with confidence",
+  },
+  {
+    name: "Electrical",
+    slug: "electrical",
+    icon: "ϟ",
+    count: "Wires, bulbs & more",
+  },
+  {
+    name: "Plumbing",
+    slug: "plumbing",
+    icon: "♧",
+    count: "Pipes and fittings",
+  },
+  {
+    name: "Ceramics & Tiles",
+    slug: "ceramics-and-tiles",
+    icon: "▧",
+    count: "Beautiful finishes",
+  },
+  {
+    name: "Glass",
+    slug: "glass",
+    icon: "▤",
+    count: "Clear possibilities",
+  },
+  {
+    name: "Gypsum",
+    slug: "gypsum",
+    icon: "▱",
+    count: "Ceilings and walls",
+  },
+  {
+    name: "Paint & Finishes",
+    slug: "paint-and-finishes",
+    icon: "◉",
+    count: "Add your colors",
+  },
+  {
+    name: "Doors & Windows",
+    slug: "doors-and-windows",
+    icon: "▣",
+    count: "Style and security",
+  },
+  {
+    name: "Roofing",
+    slug: "roofing",
+    icon: "⌂",
+    count: "Protection for every home",
+  },
+  {
+    name: "Sanitary Ware",
+    slug: "sanitary-ware",
+    icon: "♧",
+    count: "Sinks and toilets",
+  },
+  {
+    name: "Furniture",
+    slug: "furniture",
+    icon: "▤",
+    count: "Complete your spaces",
+  },
+  {
+    name: "Quartz & Stone",
+    slug: "quartz-and-stone",
+    icon: "◆",
+    count: "Premium surfaces",
+  },
+  {
+    name: "Timber & Wood",
+    slug: "timber-and-wood",
+    icon: "▥",
+    count: "Wood for every project",
+  },
+  {
+    name: "Tools & Safety",
+    slug: "tools-and-safety",
+    icon: "⚙",
+    count: "Work safely",
+  },
+  {
+    name: "Soil & Landscaping",
+    slug: "soil-and-landscaping",
+    icon: "♣",
+    count: "Prepare your site",
+  },
 ];
 
 const products = [
@@ -160,7 +250,7 @@ export default function Home() {
           {categories.map((category, index) => (
             <a
               className="category-card"
-              href={`#${category.name.toLowerCase().replaceAll(" ", "-").replaceAll("&", "and")}`}
+              href={`/materials/${category.slug}`}
               key={category.name}
             >
               <div className="category-top">
