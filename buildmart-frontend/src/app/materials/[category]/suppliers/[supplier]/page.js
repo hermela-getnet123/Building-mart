@@ -162,12 +162,12 @@ export default async function SupplierPage({ params }) {
                   <span>{product.unit}</span>
                 </div>
 
-                <Link
-                  href="#contact"
-                  className="store-product-button"
-                >
-                  Ask about this product
-                </Link>
+            <Link
+            href={`/materials/${category}/suppliers/${supplier}/products/${product.id === 1 ? "ordinary-portland-cement" : product.id === 2 ? "portland-pozzolana-cement" : "bulk-cement"}`}
+            className="store-product-button"
+            >
+            View product details →
+            </Link>
               </div>
             </article>
           ))}
